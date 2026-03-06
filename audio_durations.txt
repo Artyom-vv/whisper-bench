@@ -1,0 +1,27 @@
+﻿
+Name                    Duration_sec
+----                    ------------
+cut_en_long_01.mp3              2867
+cut_en_long_02.mp3              3600
+cut_en_midlong30_01.mp3         1800
+cut_en_midlong30_02.mp3         1800
+cut_en_midlong_01.mp3            900
+cut_en_midlong_02.mp3            900
+cut_en_mid_01.mp3                300
+cut_en_mid_02.mp3                300
+cut_en_short_01.mp3              120
+cut_en_short_02.mp3              120
+cut_ru_long_01.mp3              3600
+cut_ru_long_02.mp3              3600
+cut_ru_long_03.mp3              3600
+cut_ru_midlong30_01.mp3         1800
+cut_ru_midlong30_02.mp3         1800
+cut_ru_midlong_01.mp3            900
+cut_ru_midlong_02.mp3            900
+cut_ru_midlong_03.mp3            900
+cut_ru_mid_01.mp3                300
+cut_ru_mid_02.mp3                300
+cut_ru_short_01.mp3              120
+cut_ru_short_02.mp3              120
+
+

@@ -1,0 +1,47 @@
+# vad_filter: true везде — продовый режим, false не тестируется в основном пайплайне.
+# HEAVY — модель large-v3
+# compute_type: int8 и int8_float16 (float16 на 8 GB с beam=5 — рискованно по VRAM)
+# Рекомендуемый манифест: manifest_short.yaml (быстро) | manifest_mid.yaml (репрезентативно)
+# Ожидаемое время на manifest_short: ~20–35 мин
+gpu_price_per_hour: 0.0
+device: "cuda"
+runs_per_case: 3
+config_timeout_seconds: 1800
+per_audio_timeout_seconds: 600
+
+configurations:
+  - id: "large_v3_int8_beam5"
+    model: "large-v3"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "large_v3_int8_beam1"
+    model: "large-v3"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "large_v3_int8float16_beam5"
+    model: "large-v3"
+    compute_type: "int8_float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "large_v3_int8float16_beam1"
+    model: "large-v3"
+    compute_type: "int8_float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 1
+    chunk_length: 30

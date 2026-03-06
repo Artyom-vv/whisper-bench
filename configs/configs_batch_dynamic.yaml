@@ -1,0 +1,38 @@
+device: cuda
+runs_per_case: 1
+gpu_price_per_hour: 0.0
+config_timeout_seconds: 600
+per_audio_timeout_seconds: 300
+configurations:
+- id: lv3_int8_bs1
+  model: large-v3
+  compute_type: int8
+  vad_filter: true
+  language_mode: auto
+  beam_size: 5
+  batch_size: 1
+  chunk_length: 30
+- id: lv3_int8_bs4
+  model: large-v3
+  compute_type: int8
+  vad_filter: true
+  language_mode: auto
+  beam_size: 5
+  batch_size: 4
+  chunk_length: 30
+- id: lv3_int8_bs8
+  model: large-v3
+  compute_type: int8
+  vad_filter: true
+  language_mode: auto
+  beam_size: 5
+  batch_size: 8
+  chunk_length: 30
+- id: lv3_int8_bs12
+  model: large-v3
+  compute_type: int8
+  vad_filter: true
+  language_mode: auto
+  beam_size: 5
+  batch_size: 12
+  chunk_length: 30

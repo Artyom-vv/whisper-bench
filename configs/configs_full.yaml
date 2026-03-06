@@ -1,0 +1,103 @@
+# vad_filter: true везде — продовый режим, false не тестируется в основном пайплайне.
+# FULL — все модели (small / medium / large-v3), batch_size: 8 (оптимум для RTX 3050)
+# Рекомендуемый манифест: manifest_mid.yaml
+# Ожидаемое время на manifest_mid (8 аудио): ~2–3 часа
+gpu_price_per_hour: 0.0
+device: "cuda"
+runs_per_case: 1
+config_timeout_seconds: 1800
+per_audio_timeout_seconds: 900
+
+configurations:
+  # ── small ──────────────────────────────────────────────
+  - id: "small_int8_b8_beam5"
+    model: "small"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "small_int8_b8_beam1"
+    model: "small"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "small_float16_b8_beam5"
+    model: "small"
+    compute_type: "float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30
+
+  # ── medium ─────────────────────────────────────────────
+  - id: "medium_int8_b8_beam5"
+    model: "medium"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "medium_int8_b8_beam1"
+    model: "medium"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "medium_float16_b8_beam5"
+    model: "medium"
+    compute_type: "float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "medium_int8float16_b8_beam5"
+    model: "medium"
+    compute_type: "int8_float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30
+
+  # ── large-v3 ───────────────────────────────────────────
+  - id: "large_v3_int8_b8_beam5"
+    model: "large-v3"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "large_v3_int8_b8_beam1"
+    model: "large-v3"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 8
+    chunk_length: 30
+
+  - id: "large_v3_int8float16_b8_beam5"
+    model: "large-v3"
+    compute_type: "int8_float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 8
+    chunk_length: 30

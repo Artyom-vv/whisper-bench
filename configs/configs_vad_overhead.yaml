@@ -1,0 +1,28 @@
+# VAD OVERHEAD — единственный конфиг, где тестируется vad: false
+# Цель: измерить, сколько RTF "стоит" VAD на разных длинах файлов.
+# Запускать ОДИН РАЗ на manifest_mid.yaml. Результат используется как справочный,
+# не влияет на выбор модели/карты.
+gpu_price_per_hour: 0.0
+device: "cuda"
+runs_per_case: 3
+config_timeout_seconds: 1200
+per_audio_timeout_seconds: 600
+
+configurations:
+  - id: "large_v3_int8_novad_beam5"
+    model: "large-v3"
+    compute_type: "int8"
+    vad_filter: false
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "large_v3_int8_vad_beam5"
+    model: "large-v3"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30

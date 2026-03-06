@@ -1,0 +1,68 @@
+# LONG — 30 мин + 60 мин файлы (EN + RU)
+# Цель: стресс-тест на длинных файлах. Выявляет деградацию памяти, точность
+#        на продолжительных записях, поведение батчинга при большом числе чанков.
+audio_files:
+  # --- 30 мин ---
+  - id: "cut_en_midlong30_01"
+    path: "audio/cut_en_midlong30_01.mp3"
+    duration_seconds: 1800
+    language: "en"
+    complexity: "medium"
+    notes: "Oxford Mathematics lecture, 30 min"
+
+  - id: "cut_en_midlong30_02"
+    path: "audio/cut_en_midlong30_02.mp3"
+    duration_seconds: 1800
+    language: "en"
+    complexity: "medium"
+    notes: "Richard Bulliet history lecture, 30 min"
+
+  - id: "cut_ru_midlong30_01"
+    path: "audio/cut_ru_midlong30_01.mp3"
+    duration_seconds: 1800
+    language: "ru"
+    complexity: "medium"
+    notes: "Эжен Сю лекция, 30 min"
+
+  - id: "cut_ru_midlong30_02"
+    path: "audio/cut_ru_midlong30_02.mp3"
+    duration_seconds: 1800
+    language: "ru"
+    complexity: "medium"
+    notes: "Дороничев AI подкаст, 30 min"
+
+  # --- 60 мин ---
+  - id: "cut_en_long_01"
+    path: "audio/cut_en_long_01.mp3"
+    duration_seconds: 2867
+    language: "en"
+    complexity: "medium"
+    notes: "Oxford Mathematics lecture, ~48 min"
+
+  - id: "cut_en_long_02"
+    path: "audio/cut_en_long_02.mp3"
+    duration_seconds: 3600
+    language: "en"
+    complexity: "medium"
+    notes: "Richard Bulliet history lecture, 60 min"
+
+  - id: "cut_ru_long_01"
+    path: "audio/cut_ru_long_01.mp3"
+    duration_seconds: 3600
+    language: "ru"
+    complexity: "medium"
+    notes: "ru lecture math, 60 min"
+
+  - id: "cut_ru_long_02"
+    path: "audio/cut_ru_long_02.mp3"
+    duration_seconds: 3600
+    language: "ru"
+    complexity: "medium"
+    notes: "ru history lecture, 60 min"
+
+  - id: "cut_ru_long_03"
+    path: "audio/cut_ru_long_03.mp3"
+    duration_seconds: 3600
+    language: "ru"
+    complexity: "medium"
+    notes: "Дороничев AI подкаст, 60 min"

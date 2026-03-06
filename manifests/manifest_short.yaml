@@ -1,0 +1,31 @@
+# SHORT — 2 EN + 2 RU, 2 мин каждый (разные источники для репрезентативности)
+# Цель: быстрые тесты, перебор моделей. Два файла на язык снижают влияние
+#        конкретного контента на RTF и дают первичную оценку стабильности.
+audio_files:
+  - id: "cut_en_short_01"
+    path: "audio/cut_en_short_01.mp3"
+    duration_seconds: 120
+    language: "en"
+    complexity: "easy"
+    notes: "Oxford Mathematics lecture, 2 min"
+
+  - id: "cut_en_short_02"
+    path: "audio/cut_en_short_02.mp3"
+    duration_seconds: 120
+    language: "en"
+    complexity: "easy"
+    notes: "Richard Bulliet history lecture, 2 min"
+
+  - id: "cut_ru_short_01"
+    path: "audio/cut_ru_short_01.mp3"
+    duration_seconds: 120
+    language: "ru"
+    complexity: "easy"
+    notes: "ru lecture math, 2 min"
+
+  - id: "cut_ru_short_02"
+    path: "audio/cut_ru_short_02.mp3"
+    duration_seconds: 120
+    language: "ru"
+    complexity: "easy"
+    notes: "Дороничев AI подкаст, 2 min"

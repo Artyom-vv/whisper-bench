@@ -1,0 +1,50 @@
+# ПРИМЕЧАНИЕ: vad_filter: true везде.
+# vad_filter: false не тестируется, т.к. в продакшне VAD всегда включён.
+# Исключение — отдельный конфиг configs_vad_overhead.yaml для измерения
+# стоимости самого VAD (запускается один раз, не входит в основной пайплайн).
+# MEDIUM — модель medium
+# Оси вариации: compute_type (int8, float16, int8_float16) × beam_size (1, 5)
+# Рекомендуемый манифест: manifest_short.yaml или manifest_mid.yaml
+# Ожидаемое время на manifest_short: ~15–25 мин
+gpu_price_per_hour: 0.0
+device: "cuda"
+runs_per_case: 3
+config_timeout_seconds: 1200
+per_audio_timeout_seconds: 300
+
+configurations:
+  - id: "medium_int8_beam5"
+    model: "medium"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "medium_int8_beam1"
+    model: "medium"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "medium_float16_beam5"
+    model: "medium"
+    compute_type: "float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "medium_int8float16_beam5"
+    model: "medium"
+    compute_type: "int8_float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30

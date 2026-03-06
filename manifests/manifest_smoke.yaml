@@ -1,0 +1,16 @@
+# SMOKE — 1 EN + 1 RU, 2 мин каждый
+# Цель: быстрая проверка работоспособности скрипта (~1-2 мин на весь прогон)
+audio_files:
+  - id: "cut_en_short_01"
+    path: "audio/cut_en_short_01.mp3"
+    duration_seconds: 120
+    language: "en"
+    complexity: "easy"
+    notes: "Oxford Mathematics lecture, 2 min"
+
+  - id: "cut_ru_short_01"
+    path: "audio/cut_ru_short_01.mp3"
+    duration_seconds: 120
+    language: "ru"
+    complexity: "easy"
+    notes: "ru lecture math, 2 min"

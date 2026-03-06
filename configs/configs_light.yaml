@@ -1,0 +1,50 @@
+# ПРИМЕЧАНИЕ: vad_filter: true везде.
+# vad_filter: false не тестируется, т.к. в продакшне VAD всегда включён.
+# Исключение — отдельный конфиг configs_vad_overhead.yaml для измерения
+# стоимости самого VAD (запускается один раз, не входит в основной пайплайн).
+# LIGHT — модель small
+# Оси вариации: compute_type (int8, float16, int8_float16) × beam_size (1, 5)
+# Рекомендуемый манифест: manifest_short.yaml или manifest_mid.yaml
+# Ожидаемое время на manifest_short: ~5–10 мин
+gpu_price_per_hour: 0.0
+device: "cuda"
+runs_per_case: 3                    # 3 прогона для стабильного median RTF
+config_timeout_seconds: 600
+per_audio_timeout_seconds: 120
+
+configurations:
+  - id: "small_int8_beam5"
+    model: "small"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "small_int8_beam1"          # greedy — максимальная скорость, проверяем потерю качества
+    model: "small"
+    compute_type: "int8"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 1
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "small_float16_beam5"
+    model: "small"
+    compute_type: "float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30
+
+  - id: "small_int8float16_beam5"   # гибрид: веса int8, активации float16 — часто быстрее чистого int8
+    model: "small"
+    compute_type: "int8_float16"
+    vad_filter: true
+    language_mode: "auto"
+    beam_size: 5
+    batch_size: 1
+    chunk_length: 30

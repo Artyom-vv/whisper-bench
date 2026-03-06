@@ -1,0 +1,61 @@
+# MID — 2 EN + 2 RU × 5 мин + 2 EN + 2 RU × 15 мин
+# Цель: реалистичный тест для продовых сценариев (большинство задач — 5–20 мин).
+#        15-минутные файлы дают достаточно VAD-сегментов для батчинга.
+audio_files:
+  # --- 5 мин ---
+  - id: "cut_en_mid_01"
+    path: "audio/cut_en_mid_01.mp3"
+    duration_seconds: 300
+    language: "en"
+    complexity: "medium"
+    notes: "Oxford Mathematics lecture, 5 min"
+
+  - id: "cut_en_mid_02"
+    path: "audio/cut_en_mid_02.mp3"
+    duration_seconds: 300
+    language: "en"
+    complexity: "medium"
+    notes: "Richard Bulliet history lecture, 5 min"
+
+  - id: "cut_ru_mid_01"
+    path: "audio/cut_ru_mid_01.mp3"
+    duration_seconds: 300
+    language: "ru"
+    complexity: "medium"
+    notes: "Эжен Сю лекция, 5 min"
+
+  - id: "cut_ru_mid_02"
+    path: "audio/cut_ru_mid_02.mp3"
+    duration_seconds: 300
+    language: "ru"
+    complexity: "medium"
+    notes: "Высшая математика лекция, 5 min"
+
+  # --- 15 мин ---
+  - id: "cut_en_midlong_01"
+    path: "audio/cut_en_midlong_01.mp3"
+    duration_seconds: 900
+    language: "en"
+    complexity: "medium"
+    notes: "Oxford Mathematics lecture, 15 min"
+
+  - id: "cut_en_midlong_02"
+    path: "audio/cut_en_midlong_02.mp3"
+    duration_seconds: 900
+    language: "en"
+    complexity: "medium"
+    notes: "Richard Bulliet history lecture, 15 min"
+
+  - id: "cut_ru_midlong_01"
+    path: "audio/cut_ru_midlong_01.mp3"
+    duration_seconds: 900
+    language: "ru"
+    complexity: "medium"
+    notes: "ru lecture math, 15 min"
+
+  - id: "cut_ru_midlong_02"
+    path: "audio/cut_ru_midlong_02.mp3"
+    duration_seconds: 900
+    language: "ru"
+    complexity: "medium"
+    notes: "ru history lecture, 15 min"
