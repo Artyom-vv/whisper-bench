@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+
+.venv/
+env/
+venv/
+
+.git/
+.gitignore
+
+audio/
+results/
+logs/
+*.log
+
+*.ipynb

@@ -1,0 +1,1 @@
+config_id,audio_id,run_index,batch_size,execution_time_s,rtf,segments_count,detected_language,language_probability,peak_vram_mb,peak_ram_mb,cost_per_audio_minute,error

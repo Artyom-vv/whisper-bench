@@ -1,0 +1,11 @@
+services:
+  whisper-bench:
+    build: .
+    image: artyompow/whisper-bench:latest
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./audio:/app/audio
+      - ./results:/app/results
+    command: python3 run.py smoke
